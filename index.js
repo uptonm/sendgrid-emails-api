@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Working");
+});
+
 app.post("/api/mailer", async (req, res) => {
   let contactInfo = {
     first: req.body.first,
